@@ -1,21 +1,26 @@
 
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import { FaWhatsapp, FaEnvelope } from 'react-icons/fa';
+import { FaWhatsapp, FaEnvelope, FaFacebook,FaLinkedin,FaGithub } from 'react-icons/fa';
 import Deslizante from "../deslizante";
 
+const Alink = styled.a`
+margin-left: 15px; 
+border-bottom: 1px solid white;
+color: white; 
+  text-decoration: none; 
+  transition: color 0.2s; 
 
-const Contatospai = styled.div`
+  &:hover {
+    color: #C44848; 
+  }
+`;
+const Contatospai = styled.section`
+width: 90%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  
-  @media (max-width: 768px) {
-    flex-direction: row;
-  }
 `;
 
 const ContatoItem = styled.div`
@@ -26,9 +31,21 @@ const ContatoItem = styled.div`
   margin: 10px;
 `;
 const Icon = styled.span`
-  font-size: 24px; /* Tamanho do ícone */
-  margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+margin-left: 30px;
+padding-right: 20px;
+display: flex;
+  font-size: 20px;
+  margin-right: 30px; 
 `;
+
+const Separator = styled.hr`
+width: 80%;
+  height: 0px;
+  border: 1px solid white; 
+  margin: 10px 0; 
+`;
+
+
  export const Contatos = () => {
     const [showParagraph, setShowParagraph] = useState(false);
 
@@ -48,12 +65,36 @@ const Icon = styled.span`
 <Contatospai>
             
             <ContatoItem>
-              <Icon><FaWhatsapp /></Icon>
-              <a href="https://wa.me/seu-numero-de-telefone">WhatsApp</a>
+              <Icon><FaWhatsapp  size={30}/>
+
+              <Alink href="https://wa.me/55015996982622" >WhatsApp ( 015-996982622 ) </Alink>
+
+              </Icon>
+
+              <Icon>
+                <FaEnvelope size={30}/>
+                
+                <Alink href="mailto:leandrocmore@gmail.com">leandrocmore@gmail.com</Alink>
+
+                </Icon>
             </ContatoItem>
+
+            <Separator/>
+
             <ContatoItem>
-              <Icon><FaEnvelope /></Icon>
-              <a href="mailto:email@example.com">email@example.com</a>
+                <Icon>
+                  <FaLinkedin size={30} />
+                  <Alink href="https://www.linkedin.com/in/leandro-more" >Linkedin </Alink>
+                </Icon>
+
+                <Icon>
+                  <FaFacebook/><Alink href="https://www.facebook.com/profile.php?id=100077847608243" >Facebook</Alink>
+                </Icon>
+                <Icon>
+                  <FaGithub size={30}/><Alink href="https://github.com/leandrocmore">Guithub</Alink>
+                </Icon>
+
+              
             </ContatoItem>
   </Contatospai>
   : null}

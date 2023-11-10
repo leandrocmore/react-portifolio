@@ -2,8 +2,9 @@
 import { useEffect, useState } from 'react';
 import Deslizante from '../deslizante';
 import styled from 'styled-components';
-const Container = styled.section`
 
+const Container = styled.section`
+margin-top: 60px;
 padding: 40px;
   display: flex;
   flex-direction: column;
