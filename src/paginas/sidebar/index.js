@@ -39,16 +39,35 @@ const StyledIcon = styled.button`
   outline: none;
   cursor: pointer;
   z-index: 10;
+
 `;
+const RotLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10%;
+  color: white;
+  text-decoration: none;
+ 
+  &:hover {
+    text-decoration: underline;
+  }
+  svg {
+    margin-bottom: 8px;
+  }
+`;
+
 const StyledButton = styled.button`
-z-index: 9;
+  z-index: 9;
   background: transparent;
   border: none;
   cursor: pointer;
   display: flex;
-  align-items: center;
+  width: 100%;
   justify-content: center;
-  padding: 10%; 
+  align-items: center;
+
   &:hover, &:focus {
     outline: none;
   }
@@ -78,27 +97,27 @@ const Sidebar = ( ) => {
  <StyledMenu open={open}>
 
   <StyledButton onClick={() => setOpen0(false)}>
-  <Link  to={"/portifolio"}>
-      <FaHome size={28} color={isHomePage ? "#C44848" : "white"}/>
-      </Link>
+  <RotLink  to={"/portifolio"}>
+      <FaHome size={28} color={isHomePage ? "#C44848" : "white"}/>Home
+      </RotLink>
   </StyledButton>
 
   <StyledButton onClick={() => setOpen0(false)} >
-  <Link to={"/about"}  >
-      <FaInfoCircle size={28} color={isAboutPage ? "#C44848" : "white"}/>
-      </Link>
+  <RotLink to={"/about"}  >
+      <FaInfoCircle size={28} color={isAboutPage ? "#C44848" : "white"}/>About
+      </RotLink>
 </StyledButton>
 
 <StyledButton onClick={() => setOpen0(false)} >
-  <Link to={"/certificado"}  >
-      <FaCertificate size={28} color={isCertificado ? "#C44848" : "white"}/>
-      </Link>
+  < RotLink  to={"/certificado"}  >
+      <FaCertificate size={28} color={isCertificado ? "#C44848" : "white"}/>Certificado
+      </RotLink>
 </StyledButton>
 
 <StyledButton onClick={() => setOpen0(false)} >
-  <Link to={"/contatos"}  >
-      <FaAddressBook size={28} color={isContatos ? "#C44848" : "white"}/>
-      </Link>
+  <RotLink to={"/contatos"}  >
+      <FaAddressBook size={28} color={isContatos ? "#C44848" : "white"}/>Contatos
+      </RotLink>
 </StyledButton>
 
 </StyledMenu>

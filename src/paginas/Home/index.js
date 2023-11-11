@@ -10,6 +10,13 @@ padding: 40px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 700px) {
+    width: 95%;
+    max-width: 100%;
+  
+   
+  }
+  
 `;
 const Pbiografi = styled.p`
 line-height: 1.6;
@@ -17,6 +24,7 @@ color: white;
 font-size: 25px;
 text-align: center;
 @media (max-width: 700px) {
+
   font-size: 15px; 
   text-align: center;
 }
