@@ -9,7 +9,8 @@ margin-left: 15px;
 border-bottom: 1px solid white;
 color: white; 
   text-decoration: none; 
-  transition: color 0.2s; 
+  transition: color 0.2s;
+  white-space: nowrap; 
 
   &:hover {
     color: #C44848; 
@@ -21,6 +22,10 @@ width: 90%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media (max-width: 700px) {
+    align-items: stretch;
+  }
+ 
 `;
 
 const ContatoItem = styled.div`
@@ -29,20 +34,47 @@ const ContatoItem = styled.div`
   justify-content: center;
   color: white;
   margin: 10px;
+  @media (max-width: 700px) {
+    flex-direction: column; 
+    text-align: center; 
+    
+  }
 `;
 const Icon = styled.span`
-margin-left: 30px;
-padding-right: 20px;
-display: flex;
+  margin-left: 30px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 20px;
-  margin-right: 30px; 
+  margin-right: 30px;
+
+  svg {
+    margin-bottom: 5px;
+    width: 30px;
+      height: 30px;
+  }
+
+  @media (max-width: 700px) {
+    margin-bottom: 15px;
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
 `;
 
+
 const Separator = styled.hr`
-width: 80%;
+  width: 80%;
   height: 0px;
-  border: 1px solid white; 
-  margin: 10px 0; 
+  border: 1px solid white;
+  margin: 20px 0;
+
+  @media (max-width: 700px) {
+    margin: 20px auto; /* Centraliza o separator horizontalmente na media query */
+  }
 `;
 
 
@@ -65,14 +97,14 @@ width: 80%;
 <Contatospai>
             
             <ContatoItem>
-              <Icon><FaWhatsapp  size={30}/>
+              <Icon><FaWhatsapp />
 
-              <Alink href="https://wa.me/55015996982622" >WhatsApp ( 015-996982622 ) </Alink>
+              <Alink href="https://wa.me/55015996982622" >WhatsApp (015-996982622) </Alink>
 
               </Icon>
 
               <Icon>
-                <FaEnvelope size={30}/>
+                <FaEnvelope />
                 
                 <Alink href="mailto:leandrocmore@gmail.com">leandrocmore@gmail.com</Alink>
 
@@ -83,7 +115,7 @@ width: 80%;
 
             <ContatoItem>
                 <Icon>
-                  <FaLinkedin size={30} />
+                  <FaLinkedin  />
                   <Alink href="https://www.linkedin.com/in/leandro-more" >Linkedin </Alink>
                 </Icon>
 
@@ -91,7 +123,7 @@ width: 80%;
                   <FaFacebook/><Alink href="https://www.facebook.com/profile.php?id=100077847608243" >Facebook</Alink>
                 </Icon>
                 <Icon>
-                  <FaGithub size={30}/><Alink href="https://github.com/leandrocmore">Guithub</Alink>
+                  <FaGithub /><Alink href="https://github.com/leandrocmore">Guithub</Alink>
                 </Icon>
 
               
