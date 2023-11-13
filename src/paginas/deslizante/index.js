@@ -4,13 +4,8 @@ import styled from 'styled-components';
 
 
 const SlideDiv = styled.div`
-
   overflow-y: auto; 
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; 
   height: 80%; 
   width: 87.5%;
   background-color: rgba(24, 29, 43, 0.5); 

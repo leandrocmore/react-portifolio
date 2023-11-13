@@ -7,9 +7,14 @@ import styled from "styled-components";
 import meuLogoUrl from '../src/paginas/img/nome-icone.png';
 import { Contatos } from './paginas/contatos/index.js';
 import { Certificado } from './paginas/certificado/index.js';
+import { Coursera } from './paginas/certificado/coursera/index.js';
 
 
 const StylespaPagina = styled.div`
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 background: url(${meuLogoUrl}) no-repeat center;
 background-size: 600px auto;
 
@@ -70,6 +75,7 @@ function App() {
             <Route path="/about" element={<About/>} />
             <Route path='/certificado' element={<Certificado />}/>
             <Route path='/contatos' element={<Contatos/>}/>
+            <Route path='/coursera' element={<Coursera/>}/>
           </Routes>
         </Router>
   </StylespaPagina>

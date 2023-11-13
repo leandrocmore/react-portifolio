@@ -3,20 +3,24 @@ import { useEffect, useState } from 'react';
 import Deslizante from '../deslizante';
 import styled from 'styled-components';
 
-const Container = styled.section`
-margin-top: 60px;
+const Centrealiza = styled.section`
+display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Container = styled.div`
+width: 90%;
 padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   @media (max-width: 700px) {
-    width: 95%;
-    max-width: 100%;
-  
-   
+    width: 75%;
+    height: 0%;
+    
   }
-  
 `;
 const Pbiografi = styled.p`
 line-height: 1.6;
@@ -72,7 +76,9 @@ const Home = () => {
     return (
       
 <Deslizante direction="top" >
-{showParagraph ? <Container>
+{showParagraph ? (
+<Centrealiza>
+<Container>
 <H1biograf>Ola sou <br/> Leandro Camargo Moré <br/> e  <br/>
 Seja bem-vindo ao meu portfólio</H1biograf>
 <Separator/>
@@ -90,7 +96,11 @@ Seja bem-vindo ao meu portfólio</H1biograf>
 
 </Pbiografi>
 
-</Container>: null}
+</Container> 
+</Centrealiza>
+) : null}
+
+
 </Deslizante> 
          
     );
